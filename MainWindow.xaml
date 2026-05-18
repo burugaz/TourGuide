@@ -1,0 +1,23 @@
+﻿<Window x:Class="TourGuide.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TourGuide"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <StackPanel Margin="16">
+            <TextBlock FontSize="20" FontWeight="Bold">TourGuide - Web сервер</TextBlock>
+            <TextBlock Margin="0,8,0,12">Бэкенд реализован как ASP.NET Core MVC приложение (SQLite + EF Core). Нажмите "Запустить Web" чтобы запустить локальный сервер.</TextBlock>
+
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,8">
+                <Button Name="RunButton" Width="120" Click="RunButton_Click">Запустить Web</Button>
+                <Button Name="OpenBrowserButton" Width="140" Margin="8,0,0,0" Click="OpenBrowserButton_Click">Открыть в браузере</Button>
+            </StackPanel>
+
+            <TextBlock FontWeight="Bold" Margin="0,8,0,4">Лог сервера:</TextBlock>
+            <TextBox Name="LogTextBox" Height="220" IsReadOnly="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" />
+        </StackPanel>
+    </Grid>
+</Window>

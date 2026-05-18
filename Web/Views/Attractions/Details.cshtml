@@ -1,0 +1,16 @@
+@model TourGuide.Web.Models.Attraction
+
+<h1>@Model.Name</h1>
+
+<div class="row">
+    <div class="col-md-6">
+        <img src="@Model.PhotoUrl" class="img-fluid" alt="@Model.Name" />
+    </div>
+    <div class="col-md-6">
+        <p><strong>Город:</strong> @Model.City?.Name</p>
+        <p><strong>История:</strong> @Model.History</p>
+        <p><strong>Часы работы:</strong> @Model.OpeningHours</p>
+        <p><strong>Стоимость:</strong> @Model.Price</p>
+        <p>@Model.Description</p>
+    </div>
+</div>

@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<TargetFramework>net8.0-windows</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<UseWPF>true</UseWPF>
+	</PropertyGroup>
+
+	<!-- Exclude any web project/source files placed in the Web folder from the WPF project build -->
+	<ItemGroup>
+		<Compile Remove="Web\**\*.cs" />
+		<None Remove="Web\**\*.*" />
+		<EmbeddedResource Remove="Web\**\*.*" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Include="Web\TourGuide.Web.csproj" />
+	</ItemGroup>
+
+</Project>

@@ -1,0 +1,26 @@
+@model IEnumerable<TourGuide.Web.Models.City>
+
+<h1>Города</h1>
+
+<form method="get" class="mb-3">
+    <div class="input-group">
+        <input class="form-control" name="search" placeholder="Поиск по названию" />
+        <button class="btn btn-primary">Поиск</button>
+    </div>
+</form>
+
+<div class="row">
+@foreach (var city in Model)
+{
+    <div class="col-md-6 mb-4">
+        <div class="card">
+            <img src="@city.PhotoUrl" class="card-img-top" alt="@city.Name" style="height:200px;object-fit:cover;" />
+            <div class="card-body">
+                <h5 class="card-title">@city.Name</h5>
+                <p class="card-text">@city.Region | Население: @city.Population</p>
+                <a href="/Cities/Details/@city.Id" class="btn btn-primary">Подробнее</a>
+            </div>
+        </div>
+    </div>
+}
+</div>

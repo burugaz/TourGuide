@@ -1,0 +1,30 @@
+@model TourGuide.Web.Models.City
+
+<h1>@Model.Name</h1>
+
+<div class="row">
+    <div class="col-md-4">
+        <img src="@Model.PhotoUrl" class="img-fluid" alt="@Model.Name" />
+        <p><strong>Регион:</strong> @Model.Region</p>
+        <p><strong>Население:</strong> @Model.Population</p>
+        <p><strong>История:</strong> @Model.History</p>
+    </div>
+    <div class="col-md-8">
+        <h3>Достопримечательности</h3>
+        <div class="row">
+            @foreach (var a in Model.Attractions)
+            {
+                <div class="col-md-6 mb-3">
+                    <div class="card">
+                        <img src="@a.PhotoUrl" class="card-img-top" style="height:150px;object-fit:cover;" />
+                        <div class="card-body">
+                            <h5>@a.Name</h5>
+                            <p>@a.Description</p>
+                            <a href="/Attractions/Details/@a.Id" class="btn btn-secondary">Подробнее</a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
